@@ -1,6 +1,9 @@
 package array_slices
 
-import "testing"
+import (
+	"reflect"
+	"testing"
+)
 
 func TestSum(t *testing.T) {
 
@@ -34,8 +37,8 @@ func TestSumAll(t *testing.T) {
 
 		got := SumAll(array_1, array_2)
 		want := []int{6, 9}
-		if got != want {
-			t.Errorf("got %d want %d given, %v", got, want, numbersSizeNotDefined)
+		if !reflect.DeepEqual(got, want) {
+			t.Errorf("got %v want %v", got, want)
 		}
 
 	})
