@@ -32,14 +32,23 @@ func TestSum(t *testing.T) {
 
 func TestSumAll(t *testing.T) {
 	t.Run("return total in each slice passed", func(t *testing.T) {
-		array_1 := []int{1, 2, 3}
-		array_2 := []int{0, 4, 5}
+		array1 := []int{1, 2, 3}
+		array2 := []int{0, 4, 5}
 
-		got := SumAll(array_1, array_2)
+		got := SumAll(array1, array2)
 		want := []int{6, 9}
 		if !reflect.DeepEqual(got, want) {
 			t.Errorf("got %v want %v", got, want)
 		}
 
 	})
+}
+
+func TestSumAllTails(t *testing.T) {
+	got := SumAllTails([]int{1, 2}, []int{0, 9})
+	want := []int{2, 9}
+
+	if !reflect.DeepEqual(got, want) {
+		t.Errorf("got %v want %v", got, want)
+	}
 }
