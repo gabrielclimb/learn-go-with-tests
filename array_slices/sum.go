@@ -10,12 +10,10 @@ func Sum(numbers []int) int {
 }
 
 func SumAll(arraysToSum ...[]int) []int {
-	lengthOfNumbers := len(arraysToSum)
-	// make allows you to create a slice with a starting capacity of the len of the numbersToSum we need to work through.
-	sums := make([]int, lengthOfNumbers)
-
-	for index, arraysWithInts := range arraysToSum {
-		sums[index] = Sum(arraysWithInts)
+	var sums []int
+	for _, arrayWithInt := range arraysToSum {
+		sums = append(sums, Sum(arrayWithInt))
 	}
+
 	return sums
 }
