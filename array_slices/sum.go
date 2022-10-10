@@ -8,3 +8,7 @@ func Sum(numbers []int) int {
 	}
 	return sum
 }
+
+func SumAll(arraysToSum ...[]int) []int {
+	return
+}

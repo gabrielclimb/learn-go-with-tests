@@ -25,5 +25,18 @@ func TestSum(t *testing.T) {
 			t.Errorf("got %d want %d given, %v", got, want, numbersSizeNotDefined)
 		}
 	})
+}
 
+func TestSumAll(t *testing.T) {
+	t.Run("return total in each slice passed", func(t *testing.T) {
+		array_1 := []int{1, 2, 3}
+		array_2 := []int{0, 4, 5}
+
+		got := SumAll(array_1, array_2)
+		want := []int{6, 9}
+		if got != want {
+			t.Errorf("got %d want %d given, %v", got, want, numbersSizeNotDefined)
+		}
+
+	})
 }
