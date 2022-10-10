@@ -1,4 +1,4 @@
-module hello
+module array_slices
 
 go 1.19
 
